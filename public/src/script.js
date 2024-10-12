@@ -2,8 +2,6 @@ const BaseUrl = "http://localhost:8585/";
 const shop = document.getElementById("shop-now");
 const productsContainer = document.getElementById("shop-section"); 
 
-shop.addEventListener("click", getData);
-
 let cart = [];
 let cartButtons; // Assuming cartButtons is defined elsewhere
 
@@ -44,7 +42,7 @@ function displayCart() {
 
 initializeCart();
 
-
+/*
 async function getData(e) { // Assuming buttons is passed as an argument
   e.preventDefault();
 
@@ -77,38 +75,38 @@ async function getData(e) { // Assuming buttons is passed as an argument
       
     });
     productsContainer.scrollIntoView({ behavior: "smooth" });
-
+*/
     // Update cartButtons reference after DOM manipulation
-    cartButtons = document.querySelectorAll('.cart-btn');
-
-cartButtons.forEach(button => {
-  button.addEventListener('click', event => handleAddToCart(event, data));
-});
-  } else {
-    console.error("productsContainer not found in the document");
-  }
-}
-
-// Save cart data to localStorage in handleAddToCart function
-function handleAddToCart(event, data) {
-  // Add product to cart
-  const productIndex = parseInt(event.currentTarget.dataset.productIndex);
-  if (isNaN(productIndex) || !data || productIndex >= data.length) {
-    console.error("Invalid product index in cart button");
-    return;
-  }
-
-  const product = {
-    name: data[productIndex].name,
-    price: parseFloat(data[productIndex].price)
-  };
-
-  addToCart(product);
-
-  // Save cart data to localStorage
-  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  cartItems.push(product);
-  localStorage.setItem('cartItems', JSON.stringify(cartItems));
-}
-
+    const data = [  
+      { name: "The Orikii Bangle", price: "599.99" },  
+      { name: "Golden Flower Earrings", price: "499.99" },  
+      { name: "Green Emerald Geometric Earrings", price: "1099.99" },  
+      { name: "Floret Pearl Choker", price: "399.99" },  
+      { name: "Golden Chains", price: "799.99" },  
+      { name: "Siren Ring Set", price: "349.99" },  
+    ];  
+    
+    // Select all cart buttons   
+    cartButtons = document.querySelectorAll('.cart-btn');  
+    
+    cartButtons.forEach(button => {  
+      button.addEventListener('click', event => handleAddToCart(event, data));  
+    });  
+    
+    // Save cart data to localStorage in handleAddToCart function  
+    function handleAddToCart(event, data) {  
+      // Add product to cart  
+      const productIndex = parseInt(event.currentTarget.dataset.productIndex);  
+      const product = {  
+        name: data[productIndex].name,  
+        price: parseFloat(data[productIndex].price)  
+      };  
+    
+      addToCart(product);  
+    
+      // Save cart data to localStorage  
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];  
+      cartItems.push(product);  
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));  
+    }
 //handle customer information

@@ -164,8 +164,23 @@
               <input type="email" placeholder="Email" name="email" id="signup-email" required />
             </div>
             <div class="input-group">
-              <label for="username">Description</label>
-              <input type="text" placeholder="Company Moto" name="username" id="signup-username" required />
+              <label for="moto">Description</label>
+              <input type="text" placeholder="Company Moto" name="moto" id="signup-moto" required />
+            </div>
+            <div class="input-group">  
+              <label for="category">Industry</label>  
+              <select name="category" id="signup-category" required>  
+                <option value="" disabled selected>Select your category</option>  
+                <option value="jewelry">Jewelry</option>  
+                <option value="clothes">Clothes</option>  
+                <option value="shoes">Shoes</option>  
+                <option value="accessories">Accessories</option>  
+                <option value="bags">Bags</option>  
+                <option value="cosmetics">Cosmetics</option>  
+                <option value="footwear">Footwear</option>  
+                <option value="fashion-tech">Fashion Tech</option>  
+                <option value="sustainable-fashion">Sustainable Fashion</option>  
+              </select>  
             </div>
             <div class="input-group">
               <label for="password">Password</label>
@@ -173,7 +188,7 @@
             </div>
             <div class="input-group">
                 <label for="password">Re-Enter Password</label>
-                <input type="password" placeholder="Password" id="signup-pass" name="password" required />
+                <input type="password" placeholder="Password" id="signup-pass2" name="password" required />
               </div>
             <button id="signup-btn" class="login-btn" type="submit">Register</button>
             <p style="display: inline">Have an account?</p>
@@ -183,5 +198,34 @@
         </div>
       </div>
     </div>
+    <script>
+      const baseUrl = "http://localhost:3000/";
+
+      if (signup-form) {
+        signup-form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append('name', document.querySelector("#signup-name").value);
+            formData.append('email', document.querySelector("#signup-email").value);
+            formData.append('moto', document.querySelector("#signup-moto").value);
+            formData.append('password', document.querySelector("#signup-pass").value);
+            formData.append('industry', document.querySelector("#signup-category").value);
+            
+            
+
+            const req = await fetch(baseUrl + "api/shop", {
+                method: "POST",
+                body: formData
+            });
+
+            const resData = await req.json();
+            console.log(resData.message);
+            
+            alert('Shop has been created, please login.');
+            window.location.href = "login.html";
+           
+        });
+    }
+    </script>
       </body>
 </html>

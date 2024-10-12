@@ -58,7 +58,7 @@ h1{
 #shop{
     font-size: 48px;
     text-align: center;
-    color:#5B4327;
+    color:#537e46;
 }
 .price, .name{
     color:#5B4327 !important;
@@ -72,7 +72,7 @@ h1{
     font-size: 16px;
 }
 .cart-btn{
-    background-color: #5B4327;
+    background-color: #537e46;
     color: white;
     padding:10px 30px;
     border-radius:100px;
@@ -80,11 +80,11 @@ h1{
 }
 .cart-btn:hover{
     background-color:#ffffff20;
-    color:#5B4327;
+    color:#537e46;
 }
 .btn:hover{
     color: white !important;
-    background-color:#5B4327 !important;
+    background-color:#537e46 !important;
 }
 a{
     color:white;
@@ -94,8 +94,8 @@ a{
     background-color: white;
     padding:10px 30px;
     border-radius:100px;
-    border-color:#5B4327 !important;
-    color: #5B4327 !important;
+    border-color:#537e46 !important;
+    color: #537e46 !important;
     font-size: 16px;
 }
 @media (max-width: 960px) {
@@ -150,12 +150,17 @@ a{
   bottom: 20px;
   right: 20px;
   background-color: white;
-  color: #5B4327;
+  color: #537e46;
   border: none;
   padding:10px 30px;
   border-radius:100px;
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.desc{
+  color: rgb(59, 59, 59);
+  font-size:24px;
+  
 }
 

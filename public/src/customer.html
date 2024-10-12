@@ -13,9 +13,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("../media/pexels-giallo-859895.jpg") !important;
-background-size:cover !important;
-background-repeat: no-repeat !important;
+    background:#537e46;
 }
 
 .container {
@@ -32,7 +30,7 @@ background-repeat: no-repeat !important;
 
 .glass-login-form h2 {
     text-align: center;
-    color: #5B4327;
+    color: #537e46;
 }
 
 .input-group {
@@ -42,11 +40,11 @@ background-repeat: no-repeat !important;
 .input-group label {
     display: block;
     margin-bottom: 5px;
-    color: #5B4327;
+    color: #537e46;
 }
 
 ::placeholder {
-    color: #5B432740;
+    color: #537e46;
 }
 
 .input-group input {
@@ -57,7 +55,7 @@ background-repeat: no-repeat !important;
     border-radius: 8px;
     background: rgba(245, 240, 240);
     backdrop-filter: blur(11px);
-    color: #5B4327;
+    color: #537e46;
 }
 
 .input-group input:focus {
@@ -71,7 +69,7 @@ button {
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(45deg, #5B432790, #000000);
+    background: linear-gradient(45deg, #20301b, #000000);
     color: #fff;
     font-weight: bold;
     cursor: pointer;
@@ -92,7 +90,9 @@ button:hover {
     </style>
 </head>
 <body>
+  <img src="../media/undraw_credit_card_re_blml.svg" alt="">
     <div class="container">
+      <h1 style="color:white; text-align: center;">Almost There!</h1>
         <form class="glass-login-form" id="orderForm">
             <h2>Customer Information</h2>
             <div class="input-group">
@@ -112,12 +112,10 @@ button:hover {
                 <label for="address">Address: </label>
                 <input type="text" placeholder="Delivery Address" name="address" id="customer-address" required>
             </div>
-            
-            <button type="submit">Order</button>
         </form>
-        
+        <a href="landing.html"> <button>Place Order</button></a>
     </div>
-   <script>
+   <script>/*
     const BaseUrl = "http://localhost:8585/";
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -164,6 +162,6 @@ console.log('in order form function');
   });
 });
 
-   </script>
+  */ </script>
 </body>
 </html>
